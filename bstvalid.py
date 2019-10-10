@@ -72,6 +72,38 @@ class Node:
     def is_valid(self):
         """Is this tree a valid BST?"""
 
+        # check if left is less than root and right is greater than root
+        # in order traversal
+        # while a tree
+            # if left.data less than root
+                # is_valid = True
+                # run is_valid to node.left
+            # root
+            # if right.data is great than the root
+                # is_valid = True
+                # run is_valid to node.right
+            # else
+                #is_valid = False
+                #break
+
+        curr = self
+
+        while curr:
+
+            if curr.left < curr:
+                is_valid = True
+                is_valid(curr.left)
+
+            elif curr.right < curr:
+                is_valid = True
+                is_valid(curr.right)
+
+            else:
+                is_valid = False
+
+
+
+
 if __name__ == "__main__":
     import doctest
 
