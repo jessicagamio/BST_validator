@@ -73,7 +73,7 @@ class Node:
         """Is this tree a valid BST?"""
 
         # check if left is less than root and right is greater than root
-        # in order traversal
+        # pre order traversal
         # while a tree
             # if left.data less than root
                 # is_valid = True
@@ -90,11 +90,11 @@ class Node:
 
         while curr:
 
-            if curr.left < curr:
+            if curr.left.data < curr.data:
                 is_valid = True
                 is_valid(curr.left)
 
-            elif curr.right < curr:
+            if curr.right.data < curr.data:
                 is_valid = True
                 is_valid(curr.right)
 
