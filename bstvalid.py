@@ -88,25 +88,31 @@ class Node:
 
         curr = self
 
-        while curr:
+        if curr != None:
+
+            print('got to here')
 
             if curr.left.data < curr.data:
-                is_valid = True
+                valid = True
+                print('valid ===>', valid)
                 is_valid(curr.left)
 
             if curr.right.data < curr.data:
-                is_valid = True
+                valid = True
                 is_valid(curr.right)
 
             else:
-                is_valid = False
+                valid = False
+
+        return valid
 
 
+t = Node(4,Node(2, Node(1), Node(3)),Node(6, Node(1), Node(7)))
+print(t.is_valid())
 
+# if __name__ == "__main__":
+#     import doctest
 
-if __name__ == "__main__":
-    import doctest
-
-    if doctest.testmod().failed == 0:
-        print("\n*** ALL TESTS PASSED; THAT'S VALID!\n")
+#     if doctest.testmod().failed == 0:
+#         print("\n*** ALL TESTS PASSED; THAT'S VALID!\n")
 
